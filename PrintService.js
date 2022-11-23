@@ -1,8 +1,12 @@
 class PrintService {
     
-    print(students){
-        console.table(students)
+    printTableOf(students){
+        console.table(students);
     }
-}
 
-export default PrintService
+    print(number){
+        console.log(number);
+    }
+};
+
+export default PrintService;

@@ -32,7 +32,7 @@ Como podéis ver, cada requisito tiene un número asignado. Cuando ejecutemos la
 ### 1- Mostrar en formato de tabla todos los alumnos. 
 ### 2- Mostrar por consola la cantidad de alumnos que hay en clase.
 ### 3- Mostrar por consola todos los nombres de los alumnos.
-### 4- Eliminar el último alumno de la clase.
+### 4- Eliminar el último alumno de la clase. (use array method: .pop())
 ### 5- Eliminar un alumno aleatoriamente de la clase.
 ### 6- Mostrar por consola todos los datos de los alumnos que son chicas.
 ### 7- Mostrar por consola el número de chicos y chicas que hay en la clase.

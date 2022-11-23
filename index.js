@@ -6,3 +6,4 @@ const printService = new PrintService()
 const classroomService = new ClassroomService(printService, classroom.students)
 
 classroomService.displayAllStudents()
+classroomService.totalStudents()

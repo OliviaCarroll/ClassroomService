@@ -11,8 +11,14 @@ class ClassroomService {
     }
 
     displayAllStudents(){
-        this.printer.print(this.students)
+        this.printer.printTableOf(this.students)
     }
+
+    totalStudents(){
+        this.printer.print(this.students.length)
+    }
+
+
 }
 
 export default ClassroomService
