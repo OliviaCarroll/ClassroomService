@@ -1,0 +1,23 @@
+{
+  "name": "classroommanagement",
+  "version": "1.0.0",
+  "description": "Application to manage students in a class",
+  "main": "index.js",
+  "type": "module",
+  "jest": {
+    "transform": {}
+  },
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "keywords": [
+    "javascript",
+    "jest",
+    "node"
+  ],
+  "author": "Olivia Carroll liv.c_06@hotmail.co.uk",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
