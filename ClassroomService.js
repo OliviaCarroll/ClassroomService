@@ -33,7 +33,8 @@ class ClassroomService {
     }
 
     deleteRandom(){
-        
+        const randomIndex = arr => arr.splice((Math.random() * arr.length), 1)
+        randomIndex(this.students);
     }
 }
 

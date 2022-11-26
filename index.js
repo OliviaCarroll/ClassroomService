@@ -15,5 +15,6 @@ console.log(classroomService.totalStudents());
 console.log(classroomService.displayNames());
 // #4 uncomment
 //classroomService.deleteLast();
-
+// #5
+classroomService.deleteRandom();
 classroomService.displayAllStudents();

@@ -11,6 +11,12 @@ const students = [{
     examScores: [],
     gender: 'female',
     name: 'silvia'
+},
+{
+    age: 28,
+    examScores: [],
+    gender: 'female',
+    name: 'olivia'
 }]
 
 const availableMaleNames = ['pepe', 'juan', 'victor', 'Leo', 'francisco', 'carlos'];
