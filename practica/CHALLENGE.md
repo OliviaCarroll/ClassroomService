@@ -43,16 +43,15 @@ Como podéis ver, cada requisito tiene un número asignado. Cuando ejecutemos la
   - edad aleatoria entre 20 y 50 años.
   - género aleatorio.
   - listado de calificaciones vacío.
-
 ¡OJO!, el nombre y el género tienen que ir acordes.
 
-### 11- Mostrar por consola el nombre de la persona más joven de la clase.
+### 11- Mostrar por consola el nombre de la persona más joven de la clase. (Can probs use array.find())
 ¡OJO!, si varias personas de la clase comparten la edad más baja, cualquiera de ellos es una respuesta válida.
 
 ### 12- Mostrar por consola la edad media de todos los alumnos de la clase.
 ### 13- Mostrar por consola la edad media de las chicas de la clase.
 ### 14- Añadir nueva nota a los alumnos. Por cada alumno de la clase, tendremos que calcular una nota de forma aleatoria(número entre 0 y 10) y añadirla a su listado de notas.
-### 15- Ordenar el array de alumnos alfabéticamente según su nombre.
+### 15- Ordenar el array de alumnos alfabéticamente según su nombre. (use array.sort() ?)
 
 ## Requisitos opcionales
 Os recomiendo encarecidamente que los intentéis, no son difíciles!

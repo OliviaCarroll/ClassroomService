@@ -6,19 +6,35 @@ class ClassroomService {
 
     processStudents(){
         for(var x = 0; x < this.students.length; x++){
-            console.table(this.students[x])
+            let student = this.students[x]
+            return student;
         }
     }
 
     displayAllStudents(){
-        this.printer.printTableOf(this.students)
+        this.printer.printTableOf(this.students);
     }
 
     totalStudents(){
-        this.printer.print(this.students.length)
+        return this.students.length;
     }
 
+    displayNames(){
+        let allNames = [];
+        this.students.forEach(student => {
+            allNames.push(student.name)
+        });
+        return allNames;
+    }
 
+    deleteLast(){
+        this.students.pop();
+        return this.students; //is this needed?
+    }
+
+    deleteRandom(){
+        
+    }
 }
 
 export default ClassroomService

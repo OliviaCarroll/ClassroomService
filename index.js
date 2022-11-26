@@ -4,6 +4,16 @@ import PrintService from './PrintService.js'
 
 const printService = new PrintService()
 const classroomService = new ClassroomService(printService, classroom.students)
+// processStudents
+console.log(classroomService.processStudents())
 
-classroomService.displayAllStudents()
-classroomService.totalStudents()
+// #1
+classroomService.displayAllStudents();
+// #2
+console.log(classroomService.totalStudents());
+// #3
+console.log(classroomService.displayNames());
+// #4 uncomment
+//classroomService.deleteLast();
+
+classroomService.displayAllStudents();
