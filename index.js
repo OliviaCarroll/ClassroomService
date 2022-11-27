@@ -42,6 +42,8 @@ classroomService.displayAverageAge(classroom.students)
 // #13
 classroomService.displayAverageAge(classroomService.filterFemales())
 // #14
+classroomService.addNewGrade()
+classroomService.addNewGrade()
 
 // #15
-// classroomService.sortByName()
+classroomService.sortByName()

@@ -1,3 +1,5 @@
+import {randomIntegerInRange} from "./classroom.js";
+
 class ClassroomService {
     constructor(printer, students){
         this.printer = printer
@@ -36,7 +38,6 @@ class ClassroomService {
         randomIndex(this.students);
     }
 
-    // possible refactor for females?? Used twice,and could use in allFemaleStudents: if females = students.length then return true 
     filterFemales(){
         return this.students.filter(student => student.gender === 'female')
     }
@@ -81,7 +82,9 @@ class ClassroomService {
     }
 
     addNewGrade(){
-        
+        return this.students.forEach((student) => {
+            student.examScores.push(randomIntegerInRange(0, 10))
+        })
     }
 
     sortByName(){
