@@ -1,6 +1,6 @@
 import readline from "readline";
 
-const students = [{
+const students = [/* {
     age: 32,
     examScores: [],
     gender: 'male',
@@ -17,7 +17,7 @@ const students = [{
     examScores: [],
     gender: 'female',
     name: 'olivia'
-}]
+} */]
 
 const availableMaleNames = ['pepe', 'juan', 'victor', 'Leo', 'francisco', 'carlos'];
 const availableFemaleNames = ['cecilia', 'ana', 'luisa', 'silvia', 'isabel', 'virginia'];
