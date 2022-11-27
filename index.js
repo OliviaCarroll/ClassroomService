@@ -6,6 +6,13 @@ const printService = new PrintService()
 const classroomService = new ClassroomService(printService, classroom.students)
 // processStudents
 // console.log(classroomService.processStudents())
+// classroomService.addNewStudent()
+classroomService.addNewStudent()
+classroomService.addNewStudent()
+classroomService.addNewStudent()
+classroomService.addNewStudent()
+classroomService.addNewGrade();
+classroomService.addNewGrade();
 
 // #1
 classroomService.displayAllStudents();
@@ -26,7 +33,8 @@ classroomService.allFemaleStudents();
 // #9 
 classroomService.displayYoungAdults();
 // #10 add new student
-// classroomService.addNewStudent();
+classroomService.addNewStudent();
+classroomService.displayAllStudents()
 // #11
 classroomService.displayYoungestStudent();
 // #12
@@ -34,7 +42,6 @@ classroomService.displayAverageAge(classroom.students);
 // #13
 classroomService.displayAverageAge(classroomService.filterFemales());
 // #14
-classroomService.addNewGrade();
 classroomService.addNewGrade();
 // #15
 classroomService.sortByName();

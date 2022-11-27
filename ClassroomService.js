@@ -52,6 +52,10 @@ class ClassroomService {
     }
 
     allFemaleStudents(){
+        if (this.students.length === 0){
+            this.printer.printEmptyArray()
+            return
+        }
         this.printer.print(this.students.length === this.filterFemales().length)
     }
 
@@ -63,7 +67,7 @@ class ClassroomService {
     addNewStudent(){
         let randomGender = availableGenders[randomIntegerInRange(0, 1)]
         let randomName = randomGender === 'female' ? availableFemaleNames[randomIntegerInRange(0, availableFemaleNames.length - 1)] : availableMaleNames[randomIntegerInRange(0, availableMaleNames.length - 1)]
-        const newStudent = {
+        let newStudent = {
             age: randomIntegerInRange(20, 50), //function in classroom.js
             examScores: [],
             gender: randomGender,
@@ -75,7 +79,7 @@ class ClassroomService {
     displayYoungestStudent(){
         let sortedByAge = 
             this.students.sort((a, b) => a.age - b.age);
-        if (sortedByAge > 0){
+        if (sortedByAge.length > 0){
         this.printer.print(sortedByAge[0].name)
         }
     }
@@ -83,7 +87,7 @@ class ClassroomService {
     displayAverageAge(array){
         let averageAge = 0;
         if (array.length !== 0) {
-            let averageAge = Math.round(array.reduce((a, b) => a + b.age, 0) / array.length)
+            averageAge = Math.round(array.reduce((a, b) => a + b.age, 0) / array.length)
         }
         this.printer.print(averageAge)
     }
