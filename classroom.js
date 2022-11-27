@@ -21,7 +21,7 @@ const students = [{
 }]
 const availableMaleNames = ['pepe', 'juan', 'victor', 'Leo', 'francisco', 'carlos'];
 const availableFemaleNames = ['cecilia', 'ana', 'luisa', 'silvia', 'isabel', 'virginia'];
-const availableGenders = ['male', 'female'];
+const availableGenders = ['male', 'female']; // could be enum 
 
 function randomIntegerInRange(min, max){
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -98,12 +98,15 @@ async function classroomManager(classroomService, printService, gradesService){
             case 15:
                 classroomService.sortByName();
                 break;
+            case 16:
+                gradesService.bestGradesSum();
+                break;
             default:
                 console.log('Exiting application')
                 break;
             }        
     }
-    while (userNumber !== 0 && userNumber < 16)
+    while (userNumber !== 0 && userNumber < 19)
 
     rl.close();
 }
