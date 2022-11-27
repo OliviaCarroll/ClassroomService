@@ -29,7 +29,7 @@ class ClassroomService {
 
     deleteLast(){
         this.students.pop();
-        return this.students; //is this needed?
+/*      return this.students; //is this needed? */
     }
 
     deleteRandom(){
@@ -41,6 +41,23 @@ class ClassroomService {
         let females = this.students.filter(student => student.gender === 'female')
         return this.printer.printTableOf(females);
     }
+
+    studentsByGender(){
+        let females = this.students.filter(student => student.gender === 'female');
+        return `Females = ${females.length}, Males = ${this.students.length - females.length}`
+    }
+
+    allFemaleStudents(){
+        return this.students.every(student => student.gender === 'female')
+    }
+
+    displayYoungAdults(){
+        let youngAdults = this.students.filter(student => student.age >= 20 && student.age <= 25)
+        return this.printer.printTableOf(youngAdults)
+    }
 }
+
+// possible refactor for females?? Used twice,and could use in allFemaleStudents: if females = students.length then return true 
+
 
 export default ClassroomService

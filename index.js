@@ -21,3 +21,13 @@ classroomService.displayAllStudents();
  */
 // #6
 classroomService.displayFemales();
+
+// #7
+console.log(classroomService.studentsByGender())
+
+// #8
+console.log(classroomService.allFemaleStudents())
+
+// #9 
+classroomService.displayYoungAdults()
+
