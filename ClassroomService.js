@@ -32,7 +32,7 @@ class ClassroomService {
     }
 
     filterFemales(){
-        return this.students.filter(student => student.gender === 'female')
+        this.students.filter(student => student.gender === 'female')
     }
 
     displayFemales(){
@@ -56,7 +56,9 @@ class ClassroomService {
         let youngAdults = this.students.filter(student => student.age >= 20 && student.age <= 25)
         this.printer.printTableOf(youngAdults)
     }
-// consider making student class with constructor 
+    
+// consider making student class, extract generating random gender and name from addNewStudent method
+// ensure student always created with all 4 properties
     addNewStudent(){
         let randomGender = availableGenders[randomIntegerInRange(0, 1)]
         let randomName = randomGender === 'female' ? availableFemaleNames[randomIntegerInRange(0, availableFemaleNames.length - 1)] : availableMaleNames[randomIntegerInRange(0, availableMaleNames.length - 1)]
@@ -85,16 +87,8 @@ class ClassroomService {
         this.printer.print(averageAge)
     }
 
-    addNewGrade(){
-        if (this.students.length !== 0) {
-        return this.students.forEach((student) => {
-            student.examScores.push(randomIntegerInRange(0, 10))
-        })
-    }
-    }
-
     sortByName(){
-        return this.printer.printTableOf(
+        this.printer.printTableOf(
             this.students.sort((a, b) => a.name.localeCompare(b.name))
             )
     }

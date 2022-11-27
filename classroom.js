@@ -1,7 +1,5 @@
 import readline from "readline";
 import options from './userOptions.js'
-import ClassroomService from './ClassroomService.js'
-import PrintService from './PrintService.js'
 
 const students = [{
     age: 32,
@@ -24,11 +22,12 @@ const students = [{
 const availableMaleNames = ['pepe', 'juan', 'victor', 'Leo', 'francisco', 'carlos'];
 const availableFemaleNames = ['cecilia', 'ana', 'luisa', 'silvia', 'isabel', 'virginia'];
 const availableGenders = ['male', 'female'];
+
 function randomIntegerInRange(min, max){
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-async function classroomManager(classroomService, printerService){
+async function classroomManager(classroomService, printService, gradesService){
 
     const rl = readline.createInterface({
         input: process.stdin,
@@ -94,7 +93,7 @@ async function classroomManager(classroomService, printerService){
                 classroomService.displayAverageAge(classroomService.filterFemales());
                 break;
             case 14:
-                classroomService.addNewGrade();
+                gradesService.addNewGrade();
                 break;
             case 15:
                 classroomService.sortByName();
