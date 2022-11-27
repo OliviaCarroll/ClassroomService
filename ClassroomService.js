@@ -1,4 +1,4 @@
-import {randomIntegerInRange} from "./classroom.js";
+import {randomIntegerInRange, availableFemaleNames, availableMaleNames, availableGenders} from "./classroom.js";
 
 class ClassroomService {
     constructor(printer, students){
@@ -60,15 +60,16 @@ class ClassroomService {
         return this.printer.printTableOf(youngAdults)
     }
 
-/*     addNewStudent(){
+    addNewStudent(){
+        let gender = availableGenders[randomIntegerInRange(0, 1)]
         const newStudent = {
-            age: randomIntegerInRange(), //function in classroom.js
+            age: randomIntegerInRange(20, 50), //function in classroom.js
             examScores: [],
-            name: ,
-            gender: 
+            gender: gender,
+            name: gender === 'female' ? availableFemaleNames[randomIntegerInRange(0, availableFemaleNames.length)] : availableMaleNames[randomIntegerInRange(0, availableMaleNames.length)]
         }
-        this.students.append(newStudent)
-    } */
+        this.students.push(newStudent)
+    }
 
     displayYoungestStudent(){
         let sortedByAge = 

@@ -13,12 +13,11 @@ classroomService.displayAllStudents();
 console.log(classroomService.totalStudents());
 // #3
 console.log(classroomService.displayNames());
-// #4 uncomment
-//classroomService.deleteLast();
+// #4 
+classroomService.deleteLast();
 // #5
-/* classroomService.deleteRandom();
-classroomService.displayAllStudents();
- */
+classroomService.deleteRandom();
+
 // #6
 classroomService.displayFemales();
 
@@ -32,6 +31,7 @@ console.log(classroomService.allFemaleStudents())
 classroomService.displayYoungAdults()
 
 // #10 add new student
+classroomService.addNewStudent()
 
 // #11
 classroomService.displayYoungestStudent()
@@ -47,3 +47,5 @@ classroomService.addNewGrade()
 
 // #15
 classroomService.sortByName()
+
+
