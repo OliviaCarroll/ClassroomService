@@ -6,13 +6,6 @@ class ClassroomService {
         this.students = students
     }
 
-    processStudents(){
-        for(var x = 0; x < this.students.length; x++){
-            let student = this.students[x]
-            return student;
-        }
-    }
-
     displayAllStudents(){
         this.printer.printTableOf(this.students);
     }

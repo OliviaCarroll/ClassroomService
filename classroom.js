@@ -1,6 +1,9 @@
 import readline from "readline";
+import options from './userOptions.js'
+import ClassroomService from './ClassroomService.js'
+import PrintService from './PrintService.js'
 
-const students = [/* {
+const students = [{
     age: 32,
     examScores: [],
     gender: 'male',
@@ -17,20 +20,93 @@ const students = [/* {
     examScores: [],
     gender: 'female',
     name: 'olivia'
-} */]
-
+}]
 const availableMaleNames = ['pepe', 'juan', 'victor', 'Leo', 'francisco', 'carlos'];
 const availableFemaleNames = ['cecilia', 'ana', 'luisa', 'silvia', 'isabel', 'virginia'];
 const availableGenders = ['male', 'female'];
-
-
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
 function randomIntegerInRange(min, max){
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-export { students, availableMaleNames, availableFemaleNames, availableGenders, rl,randomIntegerInRange }
+async function classroomManager(classroomService, printerService){
+
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    function getUserNumber() {
+        return new Promise((resolve, reject) => {
+            rl.question('Introduce a number from 1 to 18 to execute the action. Press 0 to exit: ', 
+            function(userInput) {
+                rl.pause();
+                const parsedUserInput = parseInt(userInput);
+                resolve(parsedUserInput);
+            })
+        });
+    }
+
+    let userNumber;
+    
+    do {
+        console.log(options)
+        userNumber = await getUserNumber();
+        
+        switch(userNumber) {
+            case 1: 
+                classroomService.displayAllStudents();
+                break;
+            case 2:
+                classroomService.totalStudents();
+                break;
+            case 3:    // #3
+                classroomService.displayNames();
+                break;
+            case 4:
+                classroomService.deleteLast();
+                break;
+            case 5:
+                classroomService.deleteRandom();
+                break;
+            case 6:
+                classroomService.displayFemales();
+                break;
+            case 7:
+                classroomService.displayNumberOfGender();
+                break;
+            case 8:    
+                classroomService.allFemaleStudents();
+                break;
+            case 9:
+                classroomService.displayYoungAdults();
+                break;
+            case 10:    
+                classroomService.addNewStudent();
+                classroomService.displayAllStudents();
+                break;
+            case 11:
+                classroomService.displayYoungestStudent();
+                break;
+            case 12:
+                classroomService.displayAverageAge(students);
+                break;
+            case 13:
+                classroomService.displayAverageAge(classroomService.filterFemales());
+                break;
+            case 14:
+                classroomService.addNewGrade();
+                break;
+            case 15:
+                classroomService.sortByName();
+                break;
+            default:
+                console.log('Exiting application')
+                break;
+            }        
+    }
+    while (userNumber !== 0 && userNumber < 16)
+
+    rl.close();
+}
+
+export { students, availableMaleNames, availableFemaleNames, availableGenders, readline, randomIntegerInRange, classroomManager}
