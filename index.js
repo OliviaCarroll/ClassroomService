@@ -23,7 +23,7 @@ classroomService.displayAllStudents();
 classroomService.displayFemales();
 
 // #7
-console.log(classroomService.studentsByGender())
+console.log(classroomService.displayNumberOfGender())
 
 // #8
 console.log(classroomService.allFemaleStudents())
@@ -40,7 +40,7 @@ classroomService.displayYoungestStudent()
 classroomService.displayAverageAge(classroom.students)
 
 // #13
-
+classroomService.displayAverageAge(classroomService.filterFemales())
 // #14
 
 // #15
