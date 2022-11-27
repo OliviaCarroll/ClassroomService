@@ -18,7 +18,7 @@ class ClassroomService {
     }
 
     totalStudents(){
-        return this.students.length;
+        this.printer.print(this.students.length);
     }
 
     displayNames(){
@@ -26,7 +26,7 @@ class ClassroomService {
         this.students.forEach(student => {
             allNames.push(student.name)
         });
-        return allNames;
+        this.printer.print(allNames);
     }
 
     deleteLast(){
@@ -43,21 +43,21 @@ class ClassroomService {
     }
 
     displayFemales(){
-        return this.printer.printTableOf(this.filterFemales());
+        this.printer.printTableOf(this.filterFemales());
     }
 
     displayNumberOfGender(){
         let females = this.filterFemales();
-        return `Females = ${females.length}, Males = ${this.students.length - females.length}`
+        this.printer.print(`Females = ${females.length}, Males = ${this.students.length - females.length}`)
     }
 
     allFemaleStudents(){
-        return this.students.length === this.filterFemales().length
+        this.printer.print(this.students.length === this.filterFemales().length)
     }
 
     displayYoungAdults(){
         let youngAdults = this.students.filter(student => student.age >= 20 && student.age <= 25)
-        return this.printer.printTableOf(youngAdults)
+        this.printer.printTableOf(youngAdults)
     }
 
     addNewStudent(){
@@ -66,7 +66,7 @@ class ClassroomService {
             age: randomIntegerInRange(20, 50), //function in classroom.js
             examScores: [],
             gender: gender,
-            name: gender === 'female' ? availableFemaleNames[randomIntegerInRange(0, availableFemaleNames.length)] : availableMaleNames[randomIntegerInRange(0, availableMaleNames.length)]
+            name: gender === 'female' ? availableFemaleNames[randomIntegerInRange(0, availableFemaleNames.length - 1)] : availableMaleNames[randomIntegerInRange(0, availableMaleNames.length - 1)]
         }
         this.students.push(newStudent)
     }
@@ -74,12 +74,12 @@ class ClassroomService {
     displayYoungestStudent(){
         let sortedByAge = 
             this.students.sort((a, b) => a.age - b.age);
-        return this.printer.print(sortedByAge[0].name)
+        this.printer.print(sortedByAge[0].name)
     }
 
     displayAverageAge(array){
         let averageAge = Math.round(array.reduce((a, b) => a + b.age, 0) / array.length)
-        return this.printer.print(averageAge)
+        this.printer.print(averageAge)
     }
 
     addNewGrade(){
