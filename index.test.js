@@ -36,8 +36,5 @@ describe("ClassroomService should", () => {
         classroomService.displayAllStudents()
         expect(() => mockprintService.printTableOf(students)).toBeCalledTimes(1)
     }); */
-    test("display total number of students", () => {
-        
-    })
 }); 
 

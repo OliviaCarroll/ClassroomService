@@ -31,3 +31,17 @@ console.log(classroomService.allFemaleStudents())
 // #9 
 classroomService.displayYoungAdults()
 
+// #10 add new student
+
+// #11
+classroomService.displayYoungestStudent()
+
+// #12
+classroomService.displayAverageAge(classroom.students)
+
+// #13
+
+// #14
+
+// #15
+// classroomService.sortByName()

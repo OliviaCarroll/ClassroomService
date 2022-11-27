@@ -4,8 +4,8 @@ class PrintService {
         console.table(array);
     }
 
-    print(number){
-        console.log(number);
+    print(value){
+        console.log(value);
     }
 };
 

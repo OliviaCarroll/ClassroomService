@@ -33,9 +33,11 @@ class ClassroomService {
     }
 
     deleteRandom(){
-        const randomIndex = arr => arr.splice((Math.random() * arr.length), 1)
+        let randomIndex = arr => arr.splice((Math.random() * arr.length), 1)
         randomIndex(this.students);
     }
+
+    // possible refactor for females?? Used twice,and could use in allFemaleStudents: if females = students.length then return true 
 
     displayFemales(){
         let females = this.students.filter(student => student.gender === 'female')
@@ -55,9 +57,33 @@ class ClassroomService {
         let youngAdults = this.students.filter(student => student.age >= 20 && student.age <= 25)
         return this.printer.printTableOf(youngAdults)
     }
+
+/*     addNewStudent(){
+        const newStudent = {
+            age: randomIntegerInRange(), //function in classroom.js
+            examScores: [],
+            name: ,
+            gender: 
+        }
+        this.students.append(newStudent)
+    } */
+
+    displayYoungestStudent(){
+        let sortedByAge = 
+            this.students.sort((a, b) => a.age - b.age);
+        return this.printer.print(sortedByAge[0].name)
+    }
+
+    displayAverageAge(array){
+        let averageAge = Math.round(array.reduce((a, b) => a + b.age, 0) / array.length)
+        return this.printer.print(averageAge)
+    }
+
+    sortByName(){
+        return this.printer.printTableOf(
+            this.students.sort((a, b) => a.name.localeCompare(b.name))
+            )
+    }
 }
-
-// possible refactor for females?? Used twice,and could use in allFemaleStudents: if females = students.length then return true 
-
 
 export default ClassroomService
