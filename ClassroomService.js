@@ -36,6 +36,11 @@ class ClassroomService {
         const randomIndex = arr => arr.splice((Math.random() * arr.length), 1)
         randomIndex(this.students);
     }
+
+    displayFemales(){
+        let females = this.students.filter(student => student.gender === 'female')
+        return this.printer.printTableOf(females);
+    }
 }
 
 export default ClassroomService

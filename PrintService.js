@@ -1,7 +1,7 @@
 class PrintService {
     
-    printTableOf(students){
-        console.table(students);
+    printTableOf(array){
+        console.table(array);
     }
 
     print(number){

@@ -5,7 +5,7 @@ import PrintService from './PrintService.js'
 const printService = new PrintService()
 const classroomService = new ClassroomService(printService, classroom.students)
 // processStudents
-console.log(classroomService.processStudents())
+// console.log(classroomService.processStudents())
 
 // #1
 classroomService.displayAllStudents();
@@ -16,5 +16,8 @@ console.log(classroomService.displayNames());
 // #4 uncomment
 //classroomService.deleteLast();
 // #5
-classroomService.deleteRandom();
+/* classroomService.deleteRandom();
 classroomService.displayAllStudents();
+ */
+// #6
+classroomService.displayFemales();

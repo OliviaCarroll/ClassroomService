@@ -21,7 +21,7 @@ const students = [{
 
 const availableMaleNames = ['pepe', 'juan', 'victor', 'Leo', 'francisco', 'carlos'];
 const availableFemaleNames = ['cecilia', 'ana', 'luisa', 'silvia', 'isabel', 'virginia'];
-const availableGenders = ['male', 'female'];
+const availableGenders = ['male', 'female']; // TODO change to enum
 
 const rl = readline.createInterface({
     input: process.stdin,
