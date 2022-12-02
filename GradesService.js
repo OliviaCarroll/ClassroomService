@@ -10,27 +10,33 @@ class GradesService {
             student.examScores.push(randomIntegerInRange(0, 10))
         })
     }
-/*  SIMPLY RAN OUT OF TIME, TOO TIRED TO SEE WHERE IT GOES WRONG
-    bestGradesSum() {
-        let studentsSumGrades = []
+
+    sumOfAllGrades() {
+        let studentGradesSum = []
         let sumOfGrades = 0
             this.students.forEach((student) => {
                 if (student.examScores.length > 0) {
                 sumOfGrades = student.examScores.reduce((a, b) => a + b, 0)
-                studentsSumGrades.push({
+                studentGradesSum.push({
                     name: student.name,
-                    sumGrades: sumOfGrades
+                    totalGrade: sumOfGrades
                     })
                 }
-            }
-            );
-        if (studentsSumGrades.length === 0) {
-            this.printer.print('There are no students with grades registered')
-        }
-        studentsSumGrades.sort((a, b) => a.sumOfGrades - b.sumOfGrades)
-        this.printer.print(studentsSumGrades[-1].name)
+            });
+        return studentGradesSum;
     }
- */
+
+    bestGradesSum() {
+        let studentsTotalGrades = this.sumOfAllGrades();
+
+        if (studentsTotalGrades.length === 0) {
+            this.printer.print('There are no students with exam scores registered')
+            return
+        };
+        studentsTotalGrades.sort((a, b) => a.totalGrade - b.totalGrade)
+        this.printer.print(studentsTotalGrades.splice(-1));
+    }
+
 /*     bestAverageGrade() {
         let averageGrade = 0
     } 

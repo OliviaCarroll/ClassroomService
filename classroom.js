@@ -101,12 +101,15 @@ async function classroomManager(classroomService, printService, gradesService){
             case 16:
                 gradesService.bestGradesSum();
                 break;
+            case 19:
+                console.log(gradesService.sumOfAllGrades())
+                break
             default:
                 console.log('Exiting application')
                 break;
             }        
     }
-    while (userNumber !== 0 && userNumber < 19)
+    while (userNumber !== 0 && userNumber < 20)
 
     rl.close();
 }
