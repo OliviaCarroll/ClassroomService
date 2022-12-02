@@ -32,7 +32,7 @@ class ClassroomService {
     }
 
     filterFemales(){
-        this.students.filter(student => student.gender === 'female')
+        return this.students.filter(student => student.gender === 'female')
     }
 
     displayFemales(){
