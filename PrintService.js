@@ -11,6 +11,10 @@ class PrintService {
     printEmptyArray(){
         console.log('There are no students in this classroom')
     }
+
+    printNoExamScores(){
+        console.log('There are no students with exam scores registered')
+    }
 };
 
 export default PrintService;
