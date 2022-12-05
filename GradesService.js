@@ -56,24 +56,32 @@ class GradesService {
         let sortedByAverage = studentsGrades.sort((a, b) => a.averageGrade - b.averageGrade)
         this.printer.print(sortedByAverage.splice(-1))
     } 
-/* 
 
-    addPointPerGrade() {
-        this.students.forEach(student => {
-            console.log('run')
-            if (student.examScores === []) {
-                this.student.examScores.push(10)
+    addTenIfNoGrades() {
+        this.students.forEach((student) => {
+            if (student.examScores.length === 0) {
+                student.examScores.push(10)
             }
-            console.log('each grade')
-            student.examScores.forEach(function(grade) {
-                if (grade !== 10) {
-                    grade = grade + 1;
+        })
+        return this.students
+    }
+/* 
+    addPointPerGrade() {
+        let students = this.addTenIfNoGrades()
+
+        
+        this.students.examScores.map((grade) => {
+                if (examScores.grade !== 10) {
+                    examScores.grade++;
                 }
-            })
-    })
+            }) 
+    }
     this.printer.printTableOf(this.students)
     } */
 
 }
+
+
+
 
 export default GradesService

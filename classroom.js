@@ -108,17 +108,14 @@ async function classroomManager(classroomService, printService, gradesService){
                 gradesService.addPointPerGrade();
                 break;
             case 19:
-                console.log(gradesService.sumOfAllGrades())
-                break;
-            case 20:
-                console.log(gradesService.calculateAverages())
+                console.log(gradesService.addTenIfNoGrades());
                 break;
             default:
                 console.log('Exiting application')
                 break;
             }        
     }
-    while (userNumber !== 0 && userNumber < 21)
+    while (userNumber !== 0 && userNumber < 19)
 
     rl.close();
 }
